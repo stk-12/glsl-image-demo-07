@@ -16,6 +16,11 @@ canvas {
   top: 0;
   left: 0;
   z-index: -1;
+
+  opacity: 0;
+  &.is-loaded {
+    opacity: 1;
+  }
 }
 
 .container {
@@ -32,6 +37,7 @@ canvas {
   img {
     width: 58vmin;
     height: auto;
+    opacity: 0;
   }
   .txts {
     position: absolute;

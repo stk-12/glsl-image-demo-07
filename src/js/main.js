@@ -140,3 +140,7 @@ class Main {
 }
 
 const main = new Main();
+
+window.addEventListener('load', ()=>{
+  main.canvas.classList.add('is-loaded');
+})
