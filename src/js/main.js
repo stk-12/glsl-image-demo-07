@@ -5,6 +5,8 @@ import Figure from './figure';
 import { SplitText } from './splitText';
 import { ScrollObserver } from './scrollObserver';
 
+import Lenis from '@studio-freight/lenis'
+
 class Main {
   constructor() {
     this.viewport = {
@@ -26,6 +28,10 @@ class Main {
     this.imgPlaneArray = [];
 
     this.ttls = document.querySelectorAll('.ttl');
+
+    this.lenis = new Lenis({
+      duration: 2.0,
+    });
 
     this.init();
 
@@ -108,7 +114,9 @@ class Main {
     this._addEvent();
   }
 
-  _update() {
+  _update(time) {
+
+    this.lenis.raf(time);
 
     for(const img of this.imgPlaneArray) {
       img.update();
